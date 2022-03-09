@@ -13,8 +13,8 @@ module.exports = {
     },
     retrieve: async(req, res, next) => {
         try {
-        const allWilders = await WilderModel.find()
-        res.json(allWilders);
+            const allWilders = await WilderModel.find()
+            res.json(allWilders);
         } catch (error) {
             next(error)
         }
