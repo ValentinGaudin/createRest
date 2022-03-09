@@ -19,6 +19,14 @@ module.exports = {
             next(error)
         }
     },
+    retrieveOne: async(req, res, next) => {
+        try {
+            const oneWilder = await WilderModel.findById(req.params['id'])
+            res.json(oneWilder)
+        } catch (error) {
+            next (error)
+        }
+    },
     delete: async(req, res, next) => {
         try {
             const wilder = await WilderModel.findByIdAndDelete(req.params['id'])

@@ -1,10 +1,10 @@
 ###
-POST http://127.0.0.1:3000/api/wilder/create HTTP/1.1
+POST http://127.0.0.1:3000/api/addNewWilder HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Thomas",
-    "city": "Londres",
+    "name": "Valentin",
+    "city": "Tullins",
     "skills":[
         {"title": "express", "votes":5},
         {"title": "mongo", "votes":12}
@@ -12,15 +12,19 @@ content-type: application/json
 }
 
 ###
-GET http://127.0.0.1:3000/api/wilder/read HTTP/1.1
+GET http://127.0.0.1:3000/api/getAllWilder HTTP/1.1
 
 ###
 
-DELETE http://127.0.0.1:3000/api/wilder/delete/622783bba94be564d464bcad HTTP/1.1
+GET http://127.0.0.1:3000/api/getWilderByID/62286468f50eee38c1fe0158 HTTP/1.1
+
+###
+
+DELETE http://127.0.0.1:3000/api/deleteWilderByID/622783bba94be564d464bcad HTTP/1.1
 
 
 ###
-PUT http://127.0.0.1:3000/api/wilder/update/622778ceeb5c77c442ec4dfe HTTP/1.1
+PATCH http://127.0.0.1:3000/api/updateWilderByID/622778ceeb5c77c442ec4dfe HTTP/1.1
 content-type: application/json
 
 {

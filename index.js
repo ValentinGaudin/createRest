@@ -13,10 +13,12 @@ async function init() {
     app.use(express.json())
 
     //Routes
-    app.post("/api/wilder/create", WildersController.create);
-    app.put('/api/wilder/update/:id', WildersController.update)
-    app.get("/api/wilder/read", WildersController.retrieve);
-    app.delete('/api/wilder/delete/:id', WildersController.delete);
+    app.post("/api/addNewWilder", WildersController.create);
+    app.get("/api/getAllWilder", WildersController.retrieve);
+    app.get("/api/getWilderByID/:id", WildersController.retrieveOne);
+    app.delete('/api/deleteWilderByID/:id', WildersController.delete);
+    app.patch('/api/updateWilderByID/:id', WildersController.update)
+    
 
     //Start Server
     app.listen(3000, () => console.log("Server started on 3000"));
